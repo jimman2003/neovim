@@ -1,0 +1,3 @@
+[git]
+max_concurrency=20
+repos=["~/mydev/repos/*"]
