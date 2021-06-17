@@ -1,4 +1,4 @@
-require'plugins'
+require'vim_plugins'
 require'lspconfig'.pyright.setup{}
 require'compe'.setup {
   enabled = true;
@@ -26,4 +26,12 @@ require'compe'.setup {
   };
 }
 
-vim.o.rnu=true
+vim.opt.rnu=true
+vim.opt.number=true
+vim.opt.mouse='a'
+vim.api.nvim_exec([[
+  augroup Packer
+    autocmd!
+    autocmd BufWritePost vim_plugins.lua PackerCompile
+  augroup end
+]], false)
